@@ -37,12 +37,26 @@ services:
     volumes:
       - mysql_data_microservice:/var/lib/mysql
 
+  mongodb:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user_microservicios
+      - MONGO_INITDB_ROOT_PASSWORD=AD23903IDJD
+      - MONGO_INITDB_DATABASE=bd_mongo
+    volumes:
+      - mongo_data_microservice:/data/db
+
 volumes:
   zookeeper_data:
     driver: local
   kafka_data:
     driver: local
   mysql_data_microservice:
+    driver: local
+  mongo_data_microservice:
     driver: local
 
 networks:
