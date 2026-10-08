@@ -28,7 +28,7 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      - MYSQL_DATABASE=bd
+      - MYSQL_DATABASE=banking_account_query
       - MYSQL_USER=user_microservicios
       - MYSQL_PASSWORD=AD23903IDJD
       - MYSQL_ROOT_PASSWORD=AD23903IDJD
